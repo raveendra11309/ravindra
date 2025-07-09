@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/bomma/OneDrive/Desktop/ama.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+          
+    header {
+      background-color: #131921;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+.product{
+          background-color: white;
+      width: 200px;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(185, 45, 185, 0.1);
+      text-align: center;;
+    
+}
+ .product button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #f08804;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .product p{
+        color: green;
+
+    }
+    
+
+        </style>
+    </head><body>
+        <header>
+    <div class="logo">amazon<span>.in</span></div>
+    <input type="text" placeholder="Search for products">
+    <div class="cart">🛒 Cart (<span id="cart-count">0</span>)</div>
+  </header>
+        
+        <section class="product-container">
+            <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
+                <p><b> Wireless Earbuds</b></p>
+                <p >$999</p>
+                <button onclick="addToCart()">Add to cart</button>
+            </div>
+            
+            <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 2">
+                <p><b> Bluetooth Speaker</b></p>
+                <p >$1,499</p>
+                <button onclick="addToCart()">Add to cart</button>
+            </div>
+             <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product 3">
+                <p><b> Smart Watch</b></p>
+                <p >$1,799</p>
+                <button onclick="addToCart()">Add to cart</button>
+            </div>
+
+        </section>
+    <script>
+
+         let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cart-count").innerText = cartCount;
+    }
+
+    </script>
+    
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3e6e6;
+    }
+
+    header {
+      background-color: #131921;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #f08804;
+    }
+
+    header input[type="text"] {
+      width: 50%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .cart {
+      font-size: 18px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      width: 200px;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+    }
+
+    .product-card p {
+      font-weight: bold;
+      color: green;
+    }
+
+    .product-card button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #f08804;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header input[type="text"] {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">amazon<span>.in</span></div>
+    <input type="text" placeholder="Search for products">
+    <div class="cart">🛒 Cart (<span id="cart-count">0</span>)</div>
+  </header>
+
+  <section class="product-container">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Product 1">
+      <h3>Wireless Earbuds</h3>
+      <p>₹999</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Product 2">
+      <h3>Bluetooth Speaker</h3>
+      <p>₹1,499</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150" alt="Product 3">
+      <h3>Smart Watch</h3>
+      <p>₹1,799</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+
+  <script>
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cart-count").innerText = cartCount;
+    }
+  </script>
+
+</body>
+</html>
