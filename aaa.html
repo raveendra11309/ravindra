@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table in HTML</title>
+  <style>
+    table, td {
+      border: 2px solid green;
+      border-collapse: collapse;
+      text-align: center;
+      width: 400px;
+      height: 50px;
+    }
+    #m-cell {
+      border: none; /* This removes the border from "M" cell */
+    }
+  </style>
+</head>
+<body>
+  <h2>Table in HTML</h2>
+  <table>
+    <tr>
+      <td rowspan="2">A</td>
+      <td>B</td>
+      <td colspan="2">D</td>
+      <td>E</td>
+      <td rowspan="2">F</td>
+    </tr>
+    <tr>
+      <td colspan="4">C</td>
+    </tr>
+    <tr>
+      <td>K</td>
+      <td>L</td>
+      <td>G</td>
+      <td>H</td>
+      <td>I</td>
+      <td id="m-cell">M</td>
+    </tr>
+  </table>
+</body>
+</html>
