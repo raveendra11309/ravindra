@@ -3,130 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio of B Raveendra Babu, showcasing web development projects using HTML, CSS, and JavaScript">
+  <meta name="keywords" content="portfolio, web development, HTML, CSS, JavaScript, Python, SQL">
+  <meta name="author" content="B Raveendra Babu">
   <title>B Raveendra Babu - Portfolio</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #f9f9f9;
-    color: #333;
-  }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+    }
 
-  header {
-    background: #004aad;
-    color: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
+    header {
+      background: #004aad;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-  nav {
-    background: #003080;
-    text-align: center;
-    padding: 0.5rem;
-  }
+    nav {
+      background: #003087;
+      text-align: center;
+      padding: 0.75rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-  nav a {
-    color: #fff;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ddd;
+    }
 
-  header a {
-    color: #fff;
-    text-decoration: underline;
-  }
+    header a {
+      color: #fff;
+      text-decoration: underline;
+    }
 
-  main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-  h1, h2, h3 {
-    color: #004aad;
-  }
+    h1, h2, h3 {
+      color: #004aad;
+    }
 
-  section {
-    margin-bottom: 2rem;
-  }
+    section {
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
 
-  ul {
-    padding-left: 1.5rem;
-  }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  form {
-    display: flex;
-    flex-direction: column;
-  }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-  form label {
-    margin: 0.5rem 0 0.2rem;
-    font-weight: bold;
-  }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
 
-  form input, form textarea {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
+    form label {
+      margin: 0.5rem 0 0.2rem;
+      font-weight: bold;
+    }
 
-  form button {
-    margin-top: 1rem;
-    padding: 0.7rem;
-    background: #004aad;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+    form input, form textarea {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
 
-  form button:hover {
-    background: #003080;
-  }
+    form input:focus, form textarea:focus {
+      border-color: #004aad;
+      outline: none;
+    }
 
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #004aad;
-    color: #fff;
-  }
+    form button {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: #004aad;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-  footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-  }
+    form button:hover {
+      background: #003087;
+    }
 
-  footer i {
-    font-size: 24px;
-    color: #fff;
-  }
+    .download-resume {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      background: #004aad;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
 
-  footer a:hover i {
-    color: #ddd;
-  }
-</style>
+    .download-resume:hover {
+      background: #003087;
+    }
 
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #004aad;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    #scrollTopBtn:hover {
+      background: #003087;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #004aad;
+      color: #fff;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer i {
+      font-size: 24px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    footer a:hover i {
+      color: #ddd;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      header {
+        padding: 1.5rem 0.5rem;
+      }
+
+      main {
+        margin: 1rem;
+        padding: 0.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      form input, form textarea, form button {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .download-resume {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -134,11 +235,12 @@
     <p>Email: <a href="mailto:bkravindra66@gmail.com">bkravindra66@gmail.com</a> | Mobile: +91 77801 69741 | Location: Hyderabad, India</p>
     <p>
       <a href="https://www.linkedin.com/in/bommani-raveendra-babu-2b74181b8" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/raveendra11309/ravindra" target="_blank">GitHub</a>
+      <a href="https://github.com/raveendra11309/ravindra" target="_blank">GitHub</a> |
+      <a href="resume.pdf" download class="download-resume">Download Resume</a>
     </p>
   </header>
 
-  <nav>
+  <nav role="navigation">
     <a href="#career-objective">Career Objective</a>
     <a href="#internship">Internship</a>
     <a href="#education">Education</a>
@@ -173,13 +275,16 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <h3>USA Housing Price Prediction Using Machine Learning</h3>
-      <p>Tools & Technologies: Python, Linear Regression, Decision Tree</p>
-      <p>Developed models to predict housing prices using historical data and compared algorithm effectiveness for accuracy.</p>
-
-      <h3>Forecasting Bitcoin Prices Using Time Series Analysis</h3>
-      <p>Tools: Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Statsmodels</p>
-      <p>Built time series models (ARIMA & SARIMA) to forecast Bitcoin prices, identified historical trends, and compared model performance.</p>
+      <div class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p>Tools & Technologies: HTML, CSS, JavaScript</p>
+        <p>Built a responsive portfolio to showcase skills, projects, and contact information, featuring smooth scrolling, a dynamic navigation bar, and a contact form with client-side validation.</p>
+      </div>
+      <div class="project">
+        <h3>Web-Based Calculator</h3>
+        <p>Tools & Technologies: HTML, CSS, JavaScript</p>
+        <p>Developed a responsive calculator application during an internship at OASIS INFOBYTE, implementing arithmetic operations with a clean, user-friendly interface.</p>
+      </div>
     </section>
 
     <section id="technical-skills">
@@ -195,34 +300,32 @@
       <h2>Soft Skills</h2>
       <ul>
         <li>Adaptability</li>
-        <li>Active listening</li>
-        <li>Time management</li>
-        <li>Team work</li>
+        <li>Active Listening</li>
+        <li>Time Management</li>
+        <li>Teamwork</li>
       </ul>
     </section>
 
     <section id="certificates">
       <h2>Certificates</h2>
       <ul>
-        <li>Hackerrank certification in Python</li>
-        <li>Cisco certification in Python</li>
-        <li>Hackerrank certification in SQL</li>
+        <li>HackerRank Certification in Python</li>
+        <li>Cisco Certification in Python</li>
+        <li>HackerRank Certification in SQL</li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact Me</h2>
       <form id="contactForm" action="https://formsubmit.co/bkravindra66@gmail.com" method="POST">
-        <!-- Protect from spam bots -->
         <input type="hidden" name="_captcha" value="false">
-        <!-- Redirect after submit -->
         <input type="hidden" name="_next" value="thank-you.html">
 
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true">
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <input type="email" id="email" name="email" placeholder="Your email" required aria-required="true">
 
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Your phone number">
@@ -231,12 +334,14 @@
         <input type="text" id="subject" name="subject" placeholder="Subject">
 
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+        <textarea id="message" name="message" rows="5" placeholder="Your message" required aria-required="true"></textarea>
 
         <button type="submit">Send Message</button>
       </form>
     </section>
   </main>
+
+  <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
   <footer>
     <p>Connect with me:</p>
@@ -251,6 +356,32 @@
     <p>&copy; 2025 B Raveendra Babu</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Form Validation
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      const email = document.getElementById('email').value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        e.preventDefault();
+        alert('Please enter a valid email address.');
+        return;
+      }
+      const name = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !message) {
+        e.preventDefault();
+        alert('Please fill out all required fields.');
+      }
+    });
+
+    // Scroll-to-Top Button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', function () {
+      scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
