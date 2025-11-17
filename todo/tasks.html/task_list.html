@@ -1,0 +1,54 @@
+{% extends 'tasks/base.html' %}
+</div>
+</div>
+</div>
+
+
+{% if tasks %}
+<ul class="list-group">
+{% for task in tasks %}
+<li class="list-group-item d-flex justify-content-between align-items-start">
+<div class="ms-2 me-auto">
+<div class="fw-bold">
+{% if task.completed %}
+<s>{{ task.title }}</s>
+{% else %}
+{{ task.title }}
+{% endif %}
+</div>
+<small class="text-muted">{{ task.description|linebreaksbr }}</small>
+<div class="mt-1 small text-muted">
+Created: {{ task.created_at|date:"M d, Y H:i" }}
+{% if task.due_date %} • Due: {{ task.due_date|date:"M d, Y" }}{% endif %}
+</div>
+</div>
+
+
+<div class="btn-group btn-group-sm">
+<a href="{% url 'tasks:task_toggle' task.pk %}" class="btn btn-outline-secondary" title="Toggle complete">
+{% if task.completed %}Undo{% else %}Done{% endif %}
+</a>
+<a href="{% url 'tasks:task_edit' task.pk %}" class="btn btn-outline-primary">Edit</a>
+<a href="{% url 'tasks:task_delete' task.pk %}" class="btn btn-outline-danger">Delete</a>
+</div>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p class="text-muted">No tasks yet. Click “New Task” to add one.</p>
+{% endif %}
+</div>
+
+
+<div class="col-md-4">
+<div class="card">
+<div class="card-body">
+<h6>Quick stats</h6>
+<p class="mb-1">Total: <strong>{{ tasks|length }}</strong></p>
+<p class="mb-1">Pending: <strong>{{ pending_count }}</strong></p>
+<p class="mb-1">Completed: <strong>{{ completed_count }}</strong></p>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
